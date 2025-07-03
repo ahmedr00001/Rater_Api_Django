@@ -3,12 +3,15 @@ from rest_framework import routers
 from .views import RatingViewSet , MealViewSet
 
 
-routers = routers.DefaultRouter()
-routers.register ('meals' , MealViewSet)
-routers.register ('rating' , RatingViewSet)
+
+
+router = routers.DefaultRouter()
+router.register ('meals' , MealViewSet)
+router.register ('rating' , RatingViewSet)
+
 
 
 urlpatterns = [
 
-    path('' , include(routers.urls))
+    path('' , include(router.urls))
 ]
