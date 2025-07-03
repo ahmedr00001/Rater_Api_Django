@@ -1,5 +1,7 @@
 
 from pathlib import Path
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import AllowAny ,IsAuthenticated ,IsAdminUser ,IsAuthenticatedOrReadOnly 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +31,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'django_extensions',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ]
+# }
+
+
 
 
 # Password validation

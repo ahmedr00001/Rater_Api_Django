@@ -8,6 +8,7 @@ venv/
 
 # Distribution / packaging
 .Python
+token.txt
 build/
 develop-eggs/
 dist/
